@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.blawniczak.fx.ChatController">
+    <children>
+        <Label layoutX="234.0" layoutY="7.0" text="Chat" />
+      <Button layoutX="25.0" layoutY="300.0" mnemonicParsing="false" onAction="#sendMessage" prefHeight="25.0" prefWidth="456.0" text="Send" />
+      <TextField fx:id="message" layoutX="24.0" layoutY="264.0" prefHeight="25.0" prefWidth="456.0" />
+      <TextArea fx:id="chatTextArea" editable="false" layoutX="25.0" layoutY="28.0" prefHeight="223.0" prefWidth="456.0" />
+      <ComboBox fx:id="protocols" layoutX="24.0" layoutY="349.0" prefHeight="25.0" prefWidth="162.0" />
+      <Button layoutX="218.0" layoutY="349.0" mnemonicParsing="false" onAction="#changeProtocol" prefHeight="25.0" prefWidth="162.0" text="Change protocol" />
+      <Button layoutX="411.0" layoutY="349.0" mnemonicParsing="false" onAction="#logout" prefHeight="25.0" prefWidth="162.0" text="Logout and exit" />
+      <TextArea fx:id="users" editable="false" layoutX="492.0" layoutY="28.0" prefHeight="223.0" prefWidth="185.0" />
+      <Label layoutX="492.0" layoutY="7.0" text="Users:" />
+    </children>
+</Pane>
