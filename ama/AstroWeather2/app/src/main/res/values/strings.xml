@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">AstroWeather</string>
+    <string name="sun_info">Sun Info</string>
+    <string name="moon_info">Moon Info</string>
+    <string name="refresh_frequency">Refresh frequency [min]:</string>
+    <string name="longitude">Longitude:</string>
+    <string name="latitude">Latitude:</string>
+    <string name="save">Save</string>
+    <string name="rise_time">Rise Time:</string>
+    <string name="set_time">Set Time:</string>
+    <string name="rise_azimuth">Rise Azimuth:</string>
+    <string name="set_azimuth">Set Azimuth:</string>
+    <string name="twilight_morning">Twilight Morning:</string>
+    <string name="twilight_evening">Twilight Evening:</string>
+    <string name="next_full_moon">Next Full Moon:</string>
+    <string name="next_new_moon">Next New Moon:</string>
+    <string name="moon_illumination">Moon Illumination:</string>
+    <string name="moon_age">Moon Age:</string>
+    <string name="initial_frequency">15</string>
+    <string name="initial_latitude">51.36875</string>
+    <string name="initial_longitude">19.35642</string>
+    <string name="toast_plain_error">You cannot apply empty string!</string>
+    <string name="toast_wrong_latitude">You entered wrong latitude!</string>
+    <string name="toast_wrong_longitude">You entered wrong longitude!</string>
+    <string name="toast_wrong_frequency">You entered wrong frequency!</string>
+    <string name="toast_values_refreshed">Values refreshed!</string>
+</resources>
