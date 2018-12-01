@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<resources>
+    <string name="app_name">My Calculator</string>
+    <!-- Main Activity -->
+    <string name="calculator">Calculator</string>
+    <string name="simple">Simple</string>
+    <string name="advanced">Advanced</string>
+    <string name="about">About me</string>
+    <string name="exit">Exit</string>
+    <!-- About Me Activity -->
+    <string name="author">Author:</string>
+    <string name="personal_data">Bartłomiej Ławniczak</string>
+    <string name="descrption">Depending on version, you can perform simple or advanced mathematical operations!</string>
+    <!-- Simple Calculator -->
+    <string name="wrong_operation_toast">You cannot perform this operation!</string>
+    <string name="zero_button">0</string>
+    <string name="one_button">1</string>
+    <string name="two_button">2</string>
+    <string name="three_button">3</string>
+    <string name="four_button">4</string>
+    <string name="five_button">5</string>
+    <string name="six_button">6</string>
+    <string name="seven_button">7</string>
+    <string name="eight_button">8</string>
+    <string name="nine_button">9</string>
+    <string name="add_button">+</string>
+    <string name="substract_button">-</string>
+    <string name="equals_button">=</string>
+    <string name="divide_button">/</string>
+    <string name="multiply_button">*</string>
+    <string name="comma_button">.</string>
+    <string name="backspace_button">Bksp</string>
+    <string name="reset_button">C</string>
+    <string name="change_sign_button">±</string>
+    <!-- Advanced Calculator -->
+    <string name="sinus_button">sin</string>
+    <string name="cosinus_button">cos</string>
+    <string name="tangens_button">tan</string>
+    <string name="natural_logarithm_button">ln</string>
+    <string name="logarithm_button">log</string>
+    <string name="square_root_button">sqrt</string>
+    <string name="second_power_button">x^2</string>
+    <string name="power_button">x^y</string>
+</resources>
