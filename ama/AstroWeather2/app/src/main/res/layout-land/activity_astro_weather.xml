@@ -6,7 +6,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:orientation="horizontal">
 
         <TextView
@@ -20,9 +20,7 @@
             android:id="@+id/longitude"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/initial_longitude"/>
+            android:ems="10" />
 
         <TextView
             android:id="@+id/textView2"
@@ -35,9 +33,20 @@
             android:id="@+id/latitude"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/initial_latitude"/>
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/city" />
+
+        <EditText
+            android:id="@+id/city"
+            android:layout_width="106dp"
+            android:layout_height="wrap_content"
+            android:ems="10" />
 
         <TextView
             android:id="@+id/textView3"
@@ -47,7 +56,7 @@
 
         <EditText
             android:id="@+id/refresh_frequency"
-            android:layout_width="128dp"
+            android:layout_width="43dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
@@ -62,56 +71,67 @@
 
         <TextView
             android:id="@+id/timer"
-            android:layout_width="312dp"
+            android:layout_width="183dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="25sp" />
+            android:textSize="15sp" />
 
-        <Button
-            android:id="@+id/save_button"
+        <TextView
+            android:id="@+id/textView12"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:text="@string/select_place" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/units" />
+
+        <Spinner
+            android:id="@+id/unitsSpinner"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:entries="@array/unitsSpinner" />
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
             android:text="@string/save" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="17dp">
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/sun_info"
-            android:gravity="center" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/moon_info"
-            android:gravity="center" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <FrameLayout
-            android:id="@+id/sun_fragment"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/remove_button"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="@string/remove" />
 
-        <FrameLayout
-            android:id="@+id/moon_fragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
     </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vpPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v4.view.PagerTabStrip
+            android:id="@+id/pager_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp" />
+
+    </android.support.v4.view.ViewPager>
 
 </LinearLayout>

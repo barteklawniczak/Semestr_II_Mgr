@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="unitsSpinner">
+        <item>Europe (km, mb, km/h, C)</item>
+        <item>American (mi, in, mph, F)</item>
+    </string-array>
+</resources>

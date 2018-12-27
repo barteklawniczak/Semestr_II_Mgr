@@ -45,11 +45,13 @@ public class MoonFragment extends AppCompatDialogFragment {
 
     public void calculateValues() {
         AstroCalculator astroCalculator = ((AstroWeatherActivity)getActivity()).getAstroCalculator();
-        this.moonRiseTime.setText(SunFragment.getTime(astroCalculator.getMoonInfo().getMoonrise()));
-        this.moonSetTime.setText(SunFragment.getTime(astroCalculator.getMoonInfo().getMoonset()));
-        this.nextFullMoon.setText(SunFragment.getDate(astroCalculator.getMoonInfo().getNextFullMoon()));
-        this.nextNewMoon.setText(SunFragment.getDate(astroCalculator.getMoonInfo().getNextNewMoon()));
-        this.moonIllumination.setText(String.format("%s%%", String.valueOf(resultFormat.format(astroCalculator.getMoonInfo().getIllumination() * 100))));
-        this.moonAge.setText(String.format("%s days", String.valueOf(resultFormat.format(astroCalculator.getMoonInfo().getAge() / 10))));
+        if(this.moonRiseTime != null) {
+            this.moonRiseTime.setText(SunFragment.getTime(astroCalculator.getMoonInfo().getMoonrise()));
+            this.moonSetTime.setText(SunFragment.getTime(astroCalculator.getMoonInfo().getMoonset()));
+            this.nextFullMoon.setText(SunFragment.getDate(astroCalculator.getMoonInfo().getNextFullMoon()));
+            this.nextNewMoon.setText(SunFragment.getDate(astroCalculator.getMoonInfo().getNextNewMoon()));
+            this.moonIllumination.setText(String.format("%s%%", String.valueOf(resultFormat.format(astroCalculator.getMoonInfo().getIllumination() * 100))));
+            this.moonAge.setText(String.format("%s days", String.valueOf(resultFormat.format(astroCalculator.getMoonInfo().getAge() / 10))));
+        }
     }
 }

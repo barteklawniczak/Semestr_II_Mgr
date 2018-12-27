@@ -44,12 +44,14 @@ public class SunFragment extends AppCompatDialogFragment {
 
     public void calculateValues() {
         AstroCalculator astroCalculator = ((AstroWeatherActivity)getActivity()).getAstroCalculator();
-        this.sunRiseTime.setText(SunFragment.getTime(astroCalculator.getSunInfo().getSunrise()));
-        this.sunSetTime.setText(SunFragment.getTime(astroCalculator.getSunInfo().getSunset()));
-        this.sunRiseAzimuth.setText(String.format("%s°", String.valueOf(MoonFragment.resultFormat.format(astroCalculator.getSunInfo().getAzimuthRise()))));
-        this.sunSetAzimuth.setText(String.format("%s°", String.valueOf(MoonFragment.resultFormat.format(astroCalculator.getSunInfo().getAzimuthSet()))));
-        this.sunTwilightMorning.setText(SunFragment.getTime(astroCalculator.getSunInfo().getTwilightMorning()));
-        this.sunTwilightEvening.setText(SunFragment.getTime(astroCalculator.getSunInfo().getTwilightEvening()));
+        if(this.sunRiseTime != null) {
+            this.sunRiseTime.setText(SunFragment.getTime(astroCalculator.getSunInfo().getSunrise()));
+            this.sunSetTime.setText(SunFragment.getTime(astroCalculator.getSunInfo().getSunset()));
+            this.sunRiseAzimuth.setText(String.format("%s°", String.valueOf(MoonFragment.resultFormat.format(astroCalculator.getSunInfo().getAzimuthRise()))));
+            this.sunSetAzimuth.setText(String.format("%s°", String.valueOf(MoonFragment.resultFormat.format(astroCalculator.getSunInfo().getAzimuthSet()))));
+            this.sunTwilightMorning.setText(SunFragment.getTime(astroCalculator.getSunInfo().getTwilightMorning()));
+            this.sunTwilightEvening.setText(SunFragment.getTime(astroCalculator.getSunInfo().getTwilightEvening()));
+        }
     }
 
     public static String getTime(AstroDateTime astroDateTime) {
