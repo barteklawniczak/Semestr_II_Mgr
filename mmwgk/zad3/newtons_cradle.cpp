@@ -318,12 +318,30 @@ void drawSpheres() {
     glPopMatrix();
 }
 
+GLfloat light_position[2][4] = { { 0.0, 8.0, 0.0, 1.0 }, { 0.0, 8.0, 0.0, 1.0 } };
+// położenie źródła
+GLfloat light_ambient[] = { 0.2f, 0.2f, 0.2f, 1.0f };
+// składowe intensywności świecenia źródła światła otoczenia
+// Ia = [Iar,Iag,Iab]
+GLfloat light_diffuse[2][4] = { { 1.0, 0.5, 0.0, 0.0 }, { 0.0, 0.5, 1.0, 1.0 } };
+// składowe intensywności świecenia źródła światła powodującego
+// odbicie dyfuzyjne Id = [Idr,Idg,Idb]
+GLfloat light_specular[2][4] = { { 1.0f, 1.0f, 0.0f, 1.0f }, { 0.7f, 0.7f, 1.0f, 1.0f } };
+
 // Funkcja określająca co ma być rysowane (zawsze wywoływana gdy trzeba przerysować scenę)
 void RenderScene(void)
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
     gluLookAt(viewer[0], viewer[1], viewer[2], 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+    glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse[0]);
+    glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular[0]);
+    glLightfv(GL_LIGHT0, GL_POSITION, light_position[0]);
+    glLightfv(GL_LIGHT1, GL_AMBIENT, light_ambient);
+    glLightfv(GL_LIGHT1, GL_DIFFUSE, light_diffuse[1]);
+    glLightfv(GL_LIGHT1, GL_SPECULAR, light_specular[1]);
+    glLightfv(GL_LIGHT1, GL_POSITION, light_position[1]);
     if (status == 1)                    // jeśli lewy klawisz myszy wciśnięty
     {
         theta[0] += delta_x*pix2angle * 5;
@@ -371,6 +389,8 @@ void Motion(GLsizei x, GLsizei y)
     glutPostRedisplay();         // przerysowanie obrazu sceny
 }
 
+
+
 void MyInit(void)
 {
     glClearColor(0.1f, 0.1f, 0.1f, 1.0f);   // Kolor czyszczący (wypełnienia okna) ustawiono na czarny
@@ -392,15 +412,7 @@ void MyInit(void)
     // wspłczynnik n opisujący połysk powierzchni
     // Definicja źródła światła
     //-------------------------------------------------------
-    GLfloat light_position[2][4] = { { 1.0, 1.0, 0.0, 1.0 }, { 0.0, 0.0, 0.0, 1.0 } };
-    // położenie źródła
-    GLfloat light_ambient[] = { 0.2f, 0.2f, 0.2f, 1.0f };
-    // składowe intensywności świecenia źródła światła otoczenia
-    // Ia = [Iar,Iag,Iab]
-    GLfloat light_diffuse[2][4] = { { 1.0, 0.5, 0.0, 0.0 }, { 0.0, 0.5, 1.0, 1.0 } };
-    // składowe intensywności świecenia źródła światła powodującego
-    // odbicie dyfuzyjne Id = [Idr,Idg,Idb]
-    GLfloat light_specular[2][4] = { { 1.0f, 1.0f, 0.0f, 1.0f }, { 0.7f, 0.7f, 1.0f, 1.0f } };
+
     // składowe intensywności świecenia źródła światła powodującego
     // odbicie kierunkowe Is = [Isr,Isg,Isb]
     GLfloat att_constant = { 0.01f };
@@ -419,17 +431,11 @@ void MyInit(void)
     glMaterialf(GL_FRONT, GL_SHININESS, mat_shininess);
     // Ustawienie parametrów źródła światła
     //-------------------------------------------------------
-    glLightfv(GL_LIGHT0, GL_AMBIENT, light_ambient);
-    glLightfv(GL_LIGHT0, GL_DIFFUSE, light_diffuse[0]);
-    glLightfv(GL_LIGHT0, GL_SPECULAR, light_specular[0]);
-    glLightfv(GL_LIGHT0, GL_POSITION, light_position[0]);
+
     glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, att_constant);
     glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, att_linear);
     glLightf(GL_LIGHT0, GL_QUADRATIC_ATTENUATION, att_quadratic);
-    glLightfv(GL_LIGHT1, GL_AMBIENT, light_ambient);
-    glLightfv(GL_LIGHT1, GL_DIFFUSE, light_diffuse[1]);
-    glLightfv(GL_LIGHT1, GL_SPECULAR, light_specular[1]);
-    glLightfv(GL_LIGHT1, GL_POSITION, light_position[1]);
+
     glLightf(GL_LIGHT1, GL_CONSTANT_ATTENUATION, att_constant);
     glLightf(GL_LIGHT1, GL_LINEAR_ATTENUATION, att_linear);
     glLightf(GL_LIGHT1, GL_QUADRATIC_ATTENUATION, att_quadratic);
